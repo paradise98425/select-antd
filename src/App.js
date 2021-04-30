@@ -4,7 +4,6 @@ import { useState } from 'react';
 function App() {
   const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState(["Roshan", "pratap", "katel"]);
-  const [OptionOpen, setOptionOpen] = useState(false)
   const { Option } = SelectBox;
   
   const onItemChange = (event) => {
@@ -21,17 +20,12 @@ function App() {
     }
   };
 
-  const handleSelectClick = (event) => {
-    setOptionOpen(true)
-  }
 
   return (
     <div className="App">
       <SelectBox
         style={{ width: 240 }}
         placeholder="custom dropdown render"
-        onClick={handleSelectClick}
-        open={OptionOpen}
         dropdownRender={menu => (
           <div>
             {menu}
